@@ -1,4 +1,5 @@
 const Student = require('../model/students.model');
+const Address = require('../model/address.model');
 // ==========================================================================
 // ADD
 // =======
@@ -17,7 +18,26 @@ exports.createStudent = async (req, res) => {
 // ============
 exports.studentList = async (req, res) => {
     try {
-        const result = await Student.find({});
+        const result = await Student.aggregate([
+            {
+                "$project": {
+                    "_id": {
+                        "$toString": "$_id"
+                    },
+                    "first_name": 1
+                }
+            },
+            {
+                $lookup:
+                {
+                    from: 'addresses',
+                    localField: '_id',
+                    foreignField: 'student_id',
+                    as: 'address'
+                }
+            }
+        ])
+
         res.send({ data: result, message: 'Get Student List Successfully' });
 
     } catch (error) {
