@@ -1,0 +1,46 @@
+.sign_up{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.head{
+    font-size: 60px;
+    font-weight: 400;
+    color: #fff;
+   padding: 20% 30%;
+   line-height: 1.5;
+}
+.head::first-letter{
+    background: #ff8577;
+    color: #fff;
+    border-radius: 70px;
+    padding: 50px 0px 20px 90px;
+}
+.head span{
+     margin-left: 88px;
+}
+._custom{
+    background: #fff ;
+    /* height: 100vh; */
+    width: 100%;
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
