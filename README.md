@@ -8,3 +8,6 @@ App Folder Contains Simple Crud Operation Using Node js, Express and Mongoose.
 ==============
 Practising Aggregations and Operators.
 
+3.Login (Angular 8 + Node js)
+============================
+Authentication and JWT practice
