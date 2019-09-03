@@ -6,41 +6,46 @@
         Login
     </mat-grid-tile>
 </mat-grid-list>
-<mat-grid-list cols="3" rowHeight="70vh">
-    <mat-grid-tile [colspan]="2">
-        <h1 class="head"> Welcome You! <span>Find me with </span><span> details</span></h1>
+<mat-grid-list cols="5" rowHeight="70vh">
+    <mat-grid-tile [colspan]="3">
+        <h1 class="head"> Welcome You! <span>Find me with </span><span>some details</span></h1>
     </mat-grid-tile>
-    <mat-grid-tile>
+    <mat-grid-tile  [colspan]="2">
         <mat-card class="example-card _custom">
+            <form [formGroup]="loginForm">
             <mat-card-content>
                 <div class="example-container">
                     <mat-form-field>
-                        <input matInput placeholder="Enter your email" [formControl]="email" required MatFormFieldControl>
-                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                        <input matInput placeholder="Enter your email" formControlName="email" required >
+                
                     </mat-form-field>
                 </div>
                 <div class="example-container">
                     <mat-form-field>
-                        <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" MatFormFieldControl>
+                        <input matInput placeholder="Enter your password" formControlName="password" [type]="hide ? 'password' : 'text'" >
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                             [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
                     </mat-form-field>
                 </div>
-                <div class="example-container">
+                <!-- <div class="example-container">
                     <mat-form-field>
-                        <input matInput placeholder="Input" MatFormFieldControl [formControl]="first_name">
+                        <input matInput placeholder="Input"  formControlName="first_name" placeholder="Enter Your First Name">
                     </mat-form-field>
 
                 </div>
                 <div class="example-container">
                     <mat-form-field>
-                        <input matInput placeholder="Input" MatFormFieldControl [formControl]="last_name">
+                        <input matInput placeholder="Input"  formControlName="last_name" placeholder="Enter Your Last Name">
                     </mat-form-field>
 
+                </div> -->
+                <div class="example-container">
+                <button mat-flat-button color="primary" class="log">Login</button>
                 </div>
             </mat-card-content>
+            </form>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
