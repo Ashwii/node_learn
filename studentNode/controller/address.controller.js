@@ -18,8 +18,7 @@ exports.createAddress = async (req, res) => {
 exports.addressList = async (req, res) => {
     try {
         const result = await Address.find({});
-        res.send({ data: result, message: 'Get Address List Successfully' })            
-    
+        res.send({ data: result, message: 'Get Address List Successfully' });
     } catch (error) {
         res.status(500).send(error);
     }
