@@ -5,6 +5,7 @@ const User = require('../model/signup');
 exports.getUsers = async (req, res) => {
     try {
         const userList = await User.find({});
+        console.log(userList);
         res.send({result: userList, message: 'User Listed Successfully'});
     } catch (error) {
         res.status(500).json({message: error.message});
