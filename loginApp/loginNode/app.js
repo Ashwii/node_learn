@@ -15,8 +15,12 @@ mongoose.connect('mongodb://localhost/loginApp', { useNewUrlParser: true })
     .catch(() => console.error('Db connection failed'));
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
-
+// ===========================================================================
+// INITIATIZE THE ROUTE
+ const signUp = require('./routes/signup');
 // ============================================================================
+app.use('/api/users', signUp);
 app.listen((PORT, () => {
     console.log(`Server Started At POrt Number ${PORT}`)
 }));
+// ===========================================================================
