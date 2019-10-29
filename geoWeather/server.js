@@ -5,6 +5,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 const request = require('request');
 const apiKey = '85203ff3b0b8d49711ca43bf88d80015';
+app.get('/', function (req, res) {
+  res.render('index', {weather: null, error: null});
+});
 app.post('/', function (req, res) {
     let city = req.body.city;
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
