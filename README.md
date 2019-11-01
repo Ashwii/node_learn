@@ -11,3 +11,7 @@ Practising Aggregations and Operators.
 3.Login (Angular 8 + Node js)
 ============================
 Authentication and JWT practice
+
+4.Finding GEO-Weather
+============================
+Using https://openweathermap.org/api for API-KEY
