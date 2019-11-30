@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ============================================================================
 // MONGOOSE CONNECTION
 // ===========================
-mongoose.connect('mongodb://localhost/loginApp', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/loginApp', {useUnifiedTopology: true,
+useNewUrlParser: true})
     .then(() => console.log('Db connected'))
     .catch(() => console.error('Db connection failed'));
     mongoose.set('useCreateIndex', true);
@@ -20,7 +21,7 @@ mongoose.connect('mongodb://localhost/loginApp', { useNewUrlParser: true })
  const signUp = require('./routes/signup');
 // ============================================================================
 app.use('/api/users', signUp);
-app.listen((PORT, () => {
-    console.log(`Server Started At POrt Number ${PORT}`)
-}));
+app.listen(PORT, () => {
+    console.log(`Server Started At Port Number ${PORT}`)
+});
 // ===========================================================================
